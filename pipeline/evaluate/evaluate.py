@@ -100,18 +100,6 @@ def main(args):
     metadata = {
         'outputs': [
             {
-                'type': 'confusion_matrix',
-                'format': 'csv',
-                'schema': [
-                    {'name': 'target', 'type': 'CATEGORY'},
-                    {'name': 'predicted', 'type': 'CATEGORY'},
-                    {'name': 'count', 'type': 'NUMBER'},
-                ],
-                'source': '/cm.csv',
-                # Convert vocab to string because for bealean values we want "True|False" to match csv data.
-                'labels': list(map(str, ['churn', 'no-churn'])),
-            },
-            {
               'storage': 'inline',
               'source': '# Inline Markdown\n[A link](https://www.kubeflow.org/)',
               'type': 'markdown',
