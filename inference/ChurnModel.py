@@ -14,7 +14,9 @@ class ChurnModel(object):
         self.model = pickle.load(open("model/model", "rb"))
 
     def predict(self, X, features_names):
-        columns = ['gender', 'SeniorCitizen', 'Partner', 'Dependents', 'PhoneService',
+        print("Receivied predict request")
+
+        columns = ['Unnamed: 0', 'gender', 'SeniorCitizen', 'Partner', 'Dependents', 'PhoneService',
                    'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport',
                    'StreamingTV', 'StreamingMovies', 'PaperlessBilling',
                    'MultipleLines_No', 'MultipleLines_No phone service',
@@ -27,7 +29,7 @@ class ChurnModel(object):
                    'tenure_group_Tenure_0-12', 'tenure_group_Tenure_12-24',
                    'tenure_group_Tenure_24-48', 'tenure_group_Tenure_48-60',
                    'tenure_group_Tenure_gt_60', 'tenure', 'MonthlyCharges',
-                   'TotalCharges', 'Unnamed: 0']
+                   'TotalCharges']
 
         df = pd.DataFrame(X.reshape(-1, X.shape[1]), columns=columns)
 

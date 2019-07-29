@@ -1,6 +1,12 @@
 {
     "features":[
 	{
+		"name":"Unnamed: 0",
+	    "dtype":"INT",
+	    "ftype":"continuous",
+	    "range":[0,1]
+	},
+	{
 	    "name":"gender",
 	    "dtype":"INT",
 	    "ftype":"continuous",
@@ -194,12 +200,6 @@
 	},
 	{
 	    "name":"TotalCharges",
-	    "dtype":"FLOAT",
-	    "ftype":"continuous",
-	    "range":[-3,3]
-	},
-	{
-		"name":"Unnamed: 0",
 	    "dtype":"FLOAT",
 	    "ftype":"continuous",
 	    "range":[-3,3]
