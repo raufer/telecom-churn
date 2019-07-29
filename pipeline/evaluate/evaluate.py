@@ -50,33 +50,33 @@ def main(args):
     fpr, tpr, thresholds = roc_curve(test_Y, probabilities[:, 1])
 
     # plot roc curve
-    trace1 = go.Scatter(
-        x=fpr, y=tpr,
-        name="Roc : " + str(model_roc_auc),
-        line=dict(color=('rgb(22, 96, 167)'), width=2)
-    )
-
-    trace2 = go.Scatter(
-        x=[0, 1], y=[0, 1],
-        line=dict(color=('rgb(205, 12, 24)'), width=2, dash='dot')
-    )
-    fig1 = go.Figure()
-    fig1.add_trace(trace1)
-    fig1.add_trace(trace2)
-
-    # plot confusion matrix
-    trace3 = go.Heatmap(
-        z=conf_matrix,
-        x=["Not churn", "Churn"],
-        y=["Not churn", "Churn"],
-        showscale=False,
-        colorscale="Blues",
-        name="matrix",
-        xaxis="x2",
-        yaxis="y2"
-    )
-    fig2 = go.Figure()
-    fig2.add_trace(trace3)
+    # trace1 = go.Scatter(
+    #     x=fpr, y=tpr,
+    #     name="Roc : " + str(model_roc_auc),
+    #     line=dict(color=('rgb(22, 96, 167)'), width=2)
+    # )
+    #
+    # trace2 = go.Scatter(
+    #     x=[0, 1], y=[0, 1],
+    #     line=dict(color=('rgb(205, 12, 24)'), width=2, dash='dot')
+    # )
+    # fig1 = go.Figure()
+    # fig1.add_trace(trace1)
+    # fig1.add_trace(trace2)
+    #
+    # # plot confusion matrix
+    # trace3 = go.Heatmap(
+    #     z=conf_matrix,
+    #     x=["Not churn", "Churn"],
+    #     y=["Not churn", "Churn"],
+    #     showscale=False,
+    #     colorscale="Blues",
+    #     name="matrix",
+    #     xaxis="x2",
+    #     yaxis="y2"
+    # )
+    # fig2 = go.Figure()
+    # fig2.add_trace(trace3)
 
     # fig1.write_image("artifacts/roc_curve.jpeg")
     # fig2.write_image("artifacts/confusion_matrix.jpeg")
