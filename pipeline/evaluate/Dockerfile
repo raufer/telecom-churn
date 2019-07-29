@@ -20,4 +20,4 @@ RUN pip install argparse==1.4.0 && \
 
 COPY . /app
 
-ENTRYPOINT [ "python3.6", "/app/analysis.py" ]
+ENTRYPOINT [ "python3.6", "/app/evaluate.py" ]

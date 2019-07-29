@@ -1,0 +1,61 @@
+apiVersion: machinelearning.seldon.io/v1alpha2
+kind: SeldonDeployment
+metadata:
+  labels:
+    {{- toYaml .Values.sdepLabels | nindent 4 }}
+  name: {{ .Chart.Name }}
+spec:
+  annotations:
+    {{ toYaml .Values.model.annotations | nindent 4}}
+  name: {{ .Chart.Name }}
+{{- if .Values.oauth.key }}
+  oauth_key: {{ .Values.oauth.key }}
+  oauth_secret: {{ .Values.oauth.secret }}
+{{- end }}
+  predictors:
+    - componentSpecs:
+        - spec:
+            containers:
+              - image: {{ .Values.model.image.name }}
+                imagePullPolicy: {{ .Values.model.image.pullPolicy }}
+                name: {{ .Values.model.name }}
+                resources:
+                {{- toYaml .Values.model.resources | nindent 18 }}
+                env:
+                {{- if .Values.engine.env }}
+                  {{- range $key, $val := .Values.model.env }}
+                    name: {{ $key }}
+                    value: {{ $val }}
+                  {{- end }}
+                {{ else }} []
+                {{- end }}
+            terminationGracePeriodSeconds: 1
+          hpaSpec:
+            minReplicas: {{ .Values.autoscaling.minReplicas }}
+            maxReplicas: {{ .Values.autoscaling.maxReplicas }}
+            metrics:
+              - type: Resource
+                resource:
+                  name: cpu
+                  targetAverageUtilization: {{ .Values.autoscaling.targetAverageUtilization.cpu }}
+      graph:
+        children: []
+        name: {{ .Values.model.name }}
+        type: MODEL
+        endpoint:
+          type: REST
+      svcOrchSpec:
+        resources:
+        {{- toYaml .Values.engine.resources | nindent 10}}
+        env:
+          {{- if .Values.engine.env }}
+            {{- range $key, $value := .Values.engine.env }}
+            name: {{ $key }}
+            value: {{ $value }}
+            {{- end}}
+          {{ else }} []
+          {{- end }}
+      name: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+      replicas: {{ .Values.replicas }}
+      labels:
+      {{- toYaml .Values.predictorLabels | nindent 8}}
