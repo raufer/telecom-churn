@@ -5,12 +5,12 @@ from kubernetes import client as k8s_client
 
 os.environ['VERSION'] = os.environ.get('VERSION', '0.0.33')
 
-IMAGE_BASE_NAME = "/".join([os.environ['DOCKER_REGISTRY'], os.environ['ORG'], os.environ['APP_NAME']])
+IMAGE_BASE_NAME = "/".join([os.environ['DOCKER_REGISTRY'], os.environ['DOCKER_REGISTRY_ORG']])
 VERSION = os.environ['VERSION']
 
 
 def image(step_name):
-    return "{}-{}:{}".format(IMAGE_BASE_NAME, step_name, VERSION)
+    return "{}/{}:{}".format(IMAGE_BASE_NAME, step_name, VERSION)
 
 
 def preprocess_op(raw_data_location, prepared_data_location):
