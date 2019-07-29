@@ -4,13 +4,6 @@ import json
 import argparse
 import subprocess
 import pandas as pd
-import plotly
-
-
-import plotly.offline as py  # visualization
-import plotly.graph_objs as go  # visualization
-import plotly.tools as tls  # visualization
-import plotly.figure_factory as ff  # visualization
 
 from xgboost import XGBClassifier
 
