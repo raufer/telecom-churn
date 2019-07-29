@@ -27,8 +27,9 @@ class ChurnModel(object):
                    'tenure_group_Tenure_0-12', 'tenure_group_Tenure_12-24',
                    'tenure_group_Tenure_24-48', 'tenure_group_Tenure_48-60',
                    'tenure_group_Tenure_gt_60', 'tenure', 'MonthlyCharges',
-                   'TotalCharges']
+                   'TotalCharges', 'Unnamed: 0']
 
         df = pd.DataFrame(X.reshape(-1, X.shape[1]), columns=columns)
+
         return self.model.predict(df)
 

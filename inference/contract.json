@@ -197,6 +197,12 @@
 	    "dtype":"FLOAT",
 	    "ftype":"continuous",
 	    "range":[-3,3]
+	},
+	{
+		"name":"Unnamed: 0",
+	    "dtype":"FLOAT",
+	    "ftype":"continuous",
+	    "range":[-3,3]
 	}
     ],
     "targets":[
