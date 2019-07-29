@@ -101,7 +101,7 @@ def main(args):
         'outputs': [
             {
               'storage': 'inline',
-              'source': '# Inline Markdown\n[A link](https://www.kubeflow.org/)',
+              'source': '## Confusion Matrix\n|          | Predicted Churn | Predicted No Churn |\n|----------|-----------------|--------------------|\n| Churn    | 1020            | 12309              |\n| No Churn | 230             | 8992               |',
               'type': 'markdown',
             }
         ]
