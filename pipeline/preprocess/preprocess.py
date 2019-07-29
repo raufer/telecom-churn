@@ -46,6 +46,8 @@ def data_preprocessing(telcom):
     telcom = telcom.drop(columns=num_cols, axis=1)
     telcom = telcom.merge(scaled, left_index=True, right_index=True, how="left")
 
+    print("COLUMNS PREPROCESSED: ", telcom.columns)
+
     return telcom, df_telcom_og
 
 
@@ -86,6 +88,10 @@ def main(args):
 
     train.to_csv('data/prepared/train.csv')
     test.to_csv('data/prepared/test.csv')
+
+    print("COLUMNS TRAIN PREPROCESSED: ", train.columns)
+    print("COLUMNS TEST PREPROCESSED: ", test.columns)
+
 
     subprocess.run(['aws', 's3', 'cp', 'data/prepared/', args.prepared_data_location, '--recursive'])
 
