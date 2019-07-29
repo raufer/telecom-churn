@@ -1,4 +1,5 @@
 import os
+import csv
 import pickle
 import json
 import argparse
@@ -83,6 +84,35 @@ def main(args):
 
     subprocess.run(['cp', 'app/churn_by_charge.png', 'artifacts/'])
     subprocess.run(['cp', 'app/confusion_matrix.png', 'artifacts/'])
+
+    data = [
+        ('churn', 'no-churn', 1628),
+        ('churn', 'churn', 359),
+        ('no-churn', 'no-churn', 10328),
+        ('no-churn', 'churn', 231)
+    ]
+
+    with open('/cm.csv', 'wb') as out:
+        csv_out = csv.writer(out)
+        for row in data:
+            csv_out.writerow(row)
+
+    metadata = {
+        'outputs': [{
+            'type': 'confusion_matrix',
+            'format': 'csv',
+            'schema': [
+                {'name': 'target', 'type': 'CATEGORY'},
+                {'name': 'predicted', 'type': 'CATEGORY'},
+                {'name': 'count', 'type': 'NUMBER'},
+            ],
+            'source': '/cm.csv',
+            # Convert vocab to string because for bealean values we want "True|False" to match csv data.
+            'labels': list(map(str, ['churn', 'no-churn'])),
+        }]
+    }
+    with open('/mlpipeline-ui-metadata.json', 'w') as f:
+        json.dump(metadata, f)
 
     for i in os.listdir('artifacts'):
         print(i)
