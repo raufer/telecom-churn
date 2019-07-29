@@ -1,6 +1,12 @@
 {
     "features":[
 	{
+	    "name":"Unnamed: 0",
+	    "dtype":"INT",
+	    "ftype":"continuous",
+	    "range":[0,1]
+	},
+	{
 	    "name":"gender",
 	    "dtype":"INT",
 	    "ftype":"continuous",
@@ -26,42 +32,6 @@
 	},
 	{
 	    "name":"PhoneService",
-	    "dtype":"INT",
-	    "ftype":"continuous",
-	    "range":[0,1]
-	},
-	{
-	    "name":"OnlineSecurity",
-	    "dtype":"INT",
-	    "ftype":"continuous",
-	    "range":[0,1]
-	},
-	{
-	    "name":"OnlineBackup",
-	    "dtype":"INT",
-	    "ftype":"continuous",
-	    "range":[0,1]
-	},
-	{
-	    "name":"DeviceProtection",
-	    "dtype":"INT",
-	    "ftype":"continuous",
-	    "range":[0,1]
-	},
-	{
-	    "name":"TechSupport",
-	    "dtype":"INT",
-	    "ftype":"continuous",
-	    "range":[0,1]
-	},
-	{
-	    "name":"StreamingTV",
-	    "dtype":"INT",
-	    "ftype":"continuous",
-	    "range":[0,1]
-	},
-	{
-	    "name":"StreamingMovies",
 	    "dtype":"INT",
 	    "ftype":"continuous",
 	    "range":[0,1]
@@ -109,6 +79,114 @@
 	    "range":[0,1]
 	},
 	{
+	    "name":"OnlineSecurity_No",
+	    "dtype":"INT",
+	    "ftype":"continuous",
+	    "range":[0,1]
+	},
+	{
+	    "name":"OnlineSecurity_No internet service",
+	    "dtype":"INT",
+	    "ftype":"continuous",
+	    "range":[0,1]
+	},
+	{
+	    "name":"OnlineSecurity_Yes",
+	    "dtype":"INT",
+	    "ftype":"continuous",
+	    "range":[0,1]
+	},
+	{
+	    "name":"OnlineBackup_No",
+	    "dtype":"INT",
+	    "ftype":"continuous",
+	    "range":[0,1]
+	},
+	{
+	    "name":"OnlineBackup_No internet service",
+	    "dtype":"INT",
+	    "ftype":"continuous",
+	    "range":[0,1]
+	},
+	{
+	    "name":"OnlineBackup_Yes",
+	    "dtype":"INT",
+	    "ftype":"continuous",
+	    "range":[0,1]
+	},
+	{
+	    "name":"DeviceProtection_No",
+	    "dtype":"INT",
+	    "ftype":"continuous",
+	    "range":[0,1]
+	},
+	{
+	    "name":"DeviceProtection_No internet service",
+	    "dtype":"INT",
+	    "ftype":"continuous",
+	    "range":[0,1]
+	},
+	{
+	    "name":"DeviceProtection_Yes",
+	    "dtype":"INT",
+	    "ftype":"continuous",
+	    "range":[0,1]
+	},
+	{
+	    "name":"TechSupport_No",
+	    "dtype":"INT",
+	    "ftype":"continuous",
+	    "range":[0,1]
+	},
+	{
+	    "name":"TechSupport_No internet service",
+	    "dtype":"INT",
+	    "ftype":"continuous",
+	    "range":[0,1]
+	},
+	{
+	    "name":"TechSupport_Yes",
+	    "dtype":"INT",
+	    "ftype":"continuous",
+	    "range":[0,1]
+	},
+	{
+	    "name":"StreamingTV_No",
+	    "dtype":"INT",
+	    "ftype":"continuous",
+	    "range":[0,1]
+	},
+	{
+	    "name":"StreamingTV_No internet service",
+	    "dtype":"INT",
+	    "ftype":"continuous",
+	    "range":[0,1]
+	},
+	{
+	    "name":"StreamingTV_Yes",
+	    "dtype":"INT",
+	    "ftype":"continuous",
+	    "range":[0,1]
+	},
+	{
+	    "name":"StreamingMovies_No",
+	    "dtype":"INT",
+	    "ftype":"continuous",
+	    "range":[0,1]
+	},
+	{
+	    "name":"StreamingMovies_No internet service",
+	    "dtype":"INT",
+	    "ftype":"continuous",
+	    "range":[0,1]
+	},
+	{
+	    "name":"StreamingMovies_Yes",
+	    "dtype":"INT",
+	    "ftype":"continuous",
+	    "range":[0,1]
+	},
+	{
 	    "name":"Contract_Month-to-month",
 	    "dtype":"INT",
 	    "ftype":"continuous",
@@ -146,36 +224,6 @@
 	},
 	{
 	    "name":"PaymentMethod_Mailed check",
-	    "dtype":"INT",
-	    "ftype":"continuous",
-	    "range":[0,1]
-	},
-	{
-	    "name":"tenure_group_Tenure_0-12",
-	    "dtype":"INT",
-	    "ftype":"continuous",
-	    "range":[0,1]
-	},
-	{
-	    "name":"tenure_group_Tenure_12-24",
-	    "dtype":"INT",
-	    "ftype":"continuous",
-	    "range":[0,1]
-	},
-	{
-	    "name":"tenure_group_Tenure_24-48",
-	    "dtype":"INT",
-	    "ftype":"continuous",
-	    "range":[0,1]
-	},
-	{
-	    "name":"tenure_group_Tenure_48-60",
-	    "dtype":"INT",
-	    "ftype":"continuous",
-	    "range":[0,1]
-	},
-	{
-	    "name":"tenure_group_Tenure_gt_60",
 	    "dtype":"INT",
 	    "ftype":"continuous",
 	    "range":[0,1]

@@ -14,7 +14,6 @@ class ChurnModel(object):
         self.model = pickle.load(open("model/model", "rb"))
 
     def predict(self, X, features_names):
-        print("Receivied predict request")
 
         # columns = ['Unnamed: 0', 'gender', 'SeniorCitizen', 'Partner', 'Dependents', 'PhoneService',
         #            'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport',
