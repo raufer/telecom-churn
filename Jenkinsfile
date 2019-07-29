@@ -108,13 +108,13 @@ pipeline {
       }
       steps {
         container('python') {
-          dir('./charts/manticore') {
+          dir('./charts/telecom-churn') {
             sh "jx step changelog --version v\$(cat ../../VERSION)"
 
             // Add the correct IMAGE:VERSION value in values.yaml
             sh '''
             export VERSION=`(cat ../../VERSION)` && \
-            export IMAGE=$DOCKER_REGISTRY/$ORG/$APP_NAME-inference:$VERSION && \
+            export IMAGE=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG/inference:$VERSION && \
             python3 ../overwrite.py values.yaml model.image.name $IMAGE
             '''
 
