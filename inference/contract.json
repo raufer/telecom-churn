@@ -3,207 +3,213 @@
 	{
 	    "name":"gender",
 	    "dtype":"INT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"SeniorCitizen",
 	    "dtype":"INT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"Partner",
 	    "dtype":"INT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"Dependents",
 	    "dtype":"INT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "range":[0,5]
 	},
 	{
 	    "name":"PhoneService",
 	    "dtype":"INT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"OnlineSecurity",
 	    "dtype":"INT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"OnlineBackup",
 	    "dtype":"INT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"DeviceProtection",
 	    "dtype":"INT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"TechSupport",
 	    "dtype":"INT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"StreamingTV",
 	    "dtype":"INT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"StreamingMovies",
 	    "dtype":"INT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"PaperlessBilling",
 	    "dtype":"INT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"MultipleLines_No",
 	    "dtype":"INT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"MultipleLines_No phone service",
 	    "dtype":"INT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"MultipleLines_Yes",
 	    "dtype":"INT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"InternetService_DSL",
 	    "dtype":"INT",
-	    "ftype":"CATEGORICAL",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"InternetService_Fiber optic",
 	    "dtype":"INT",
-	    "ftype":"CATEGORICAL",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"InternetService_No",
 	    "dtype":"INT",
-	    "ftype":"CATEGORICAL",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"Contract_Month-to-month",
 	    "dtype":"INT",
-	    "ftype":"CATEGORICAL",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"Contract_One year",
 	    "dtype":"INT",
-	    "ftype":"CATEGORICAL",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"Contract_Two year",
 	    "dtype":"INT",
-	    "ftype":"CATEGORICAL",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"PaymentMethod_Bank transfer (automatic)",
 	    "dtype":"INT",
-	    "ftype":"CATEGORICAL",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"PaymentMethod_Credit card (automatic)",
 	    "dtype":"INT",
-	    "ftype":"CATEGORICAL",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"PaymentMethod_Electronic check",
 	    "dtype":"INT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"PaymentMethod_Mailed check",
 	    "dtype":"INT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"tenure_group_Tenure_0-12",
 	    "dtype":"INT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"tenure_group_Tenure_12-24",
 	    "dtype":"INT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"tenure_group_Tenure_24-48",
 	    "dtype":"INT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"tenure_group_Tenure_48-60",
 	    "dtype":"INT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"tenure_group_Tenure_gt_60",
 	    "dtype":"INT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "range":[0,1]
 	},
 	{
 	    "name":"tenure",
 	    "dtype":"FLOAT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "range":[-2,2]
 	},
 	{
 	    "name":"MonthlyCharges",
 	    "dtype":"FLOAT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "range":[-2,2]
 	},
 	{
 	    "name":"TotalCharges",
 	    "dtype":"FLOAT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "range":[-3,3]
-	}
+	},
+    {
+        "name":"Unnamed: 0",
+        "dtype":"FLOAT",
+        "ftype":"continuous",
+        "range":[-3,3]
+    }
     ],
     "targets":[
 	{
 	    "name":"Churn",
 	    "dtype":"INT",
-	    "ftype":"CONTINUOUS",
+	    "ftype":"continuous",
 	    "values":[0,1]
 	}
     ]

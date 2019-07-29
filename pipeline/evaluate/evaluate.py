@@ -101,7 +101,7 @@ def main(args):
         'outputs': [
             {
               'storage': 'inline',
-              'source': '## Confusion Matrix\n|               | Pr.Churn   .  | Pr. No Churn    .   |\n|-------------- |-------------- |-------------------  |\n| Churn      .  | 1020          | 12309               |\n| No Churn   .  | 230           | 8992                |',
+              'source': '## Confusion Matrix\n|               | Pr.Churn     | Pr. No Churn      |\n|-------------- |-------------- |-------------------  |\n| Churn      | 1020          | 12309               |\n| No Churn   | 230           | 8992                |',
               'type': 'markdown',
             }
         ]
