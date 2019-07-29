@@ -54,8 +54,8 @@ pipeline {
 	          echo "Building $file";
 	          cd $file;
 	          STEP=$(basename $file)
-	          IMAGE=$DOCKER_REGISTRY/$ORG/$APP_NAME\\-$STEP:$VERSION
-	          echo $IMAGE
+	          IMAGE=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG/$STEP:$VERSION
+	          echo $IMAGkE
 	          docker build --network=host -t $IMAGE . ;
 	          docker push $IMAGE;
 	          cd ../..;
@@ -65,7 +65,7 @@ pipeline {
 
 	      sh '''
 	      export VERSION=`(cat VERSION)` && \
-	      export IMAGE=$DOCKER_REGISTRY/$ORG/$APP_NAME-inference:$VERSION && \
+	      export IMAGE=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG/inference:$VERSION && \
 	      cd inference && \
 	      docker build --network=host -t $IMAGE . && \
 	      docker push $IMAGE && \
