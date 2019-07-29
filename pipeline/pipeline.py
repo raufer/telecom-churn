@@ -61,7 +61,7 @@ def evaluate_op(prepared_data_location, model_repo_location):
             '--prepared-data-location', prepared_data_location,
             '--model-repo-location', model_repo_location
         ],
-        file_outputs={'test': '/app/churn_by_charge.png'}
+        output_artifact_paths={'test': '/app/churn_by_charge.png'}
     )
 
 
