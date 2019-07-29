@@ -15,23 +15,25 @@ class ChurnModel(object):
 
     def predict(self, X, features_names):
 
-        # columns = ['Unnamed: 0', 'gender', 'SeniorCitizen', 'Partner', 'Dependents', 'PhoneService',
-        #            'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport',
-        #            'StreamingTV', 'StreamingMovies', 'PaperlessBilling',
-        #            'MultipleLines_No', 'MultipleLines_No phone service',
-        #            'MultipleLines_Yes', 'InternetService_DSL',
-        #            'InternetService_Fiber optic', 'InternetService_No',
-        #            'Contract_Month-to-month', 'Contract_One year', 'Contract_Two year',
-        #            'PaymentMethod_Bank transfer (automatic)',
-        #            'PaymentMethod_Credit card (automatic)',
-        #            'PaymentMethod_Electronic check', 'PaymentMethod_Mailed check',
-        #            'tenure_group_Tenure_0-12', 'tenure_group_Tenure_12-24',
-        #            'tenure_group_Tenure_24-48', 'tenure_group_Tenure_48-60',
-        #            'tenure_group_Tenure_gt_60', 'tenure', 'MonthlyCharges',
-        #            'TotalCharges']
+        columns = ['Unnamed: 0', 'gender', 'SeniorCitizen', 'Partner', 'Dependents',
+       'PhoneService', 'PaperlessBilling', 'MultipleLines_No',
+       'MultipleLines_No phone service', 'MultipleLines_Yes',
+       'InternetService_DSL', 'InternetService_Fiber optic',
+       'InternetService_No', 'OnlineSecurity_No',
+       'OnlineSecurity_No internet service', 'OnlineSecurity_Yes',
+       'OnlineBackup_No', 'OnlineBackup_No internet service',
+       'OnlineBackup_Yes', 'DeviceProtection_No',
+       'DeviceProtection_No internet service', 'DeviceProtection_Yes',
+       'TechSupport_No', 'TechSupport_No internet service', 'TechSupport_Yes',
+       'StreamingTV_No', 'StreamingTV_No internet service', 'StreamingTV_Yes',
+       'StreamingMovies_No', 'StreamingMovies_No internet service',
+       'StreamingMovies_Yes', 'Contract_Month-to-month', 'Contract_One year',
+       'Contract_Two year', 'PaymentMethod_Bank transfer (automatic)',
+       'PaymentMethod_Credit card (automatic)',
+       'PaymentMethod_Electronic check', 'PaymentMethod_Mailed check',
+       'tenure', 'MonthlyCharges', 'TotalCharges']
 
-        #df = pd.DataFrame(X.reshape(-1, X.shape[1]), columns=columns)
+        df = pd.DataFrame(X.reshape(-1, X.shape[1]), columns=columns)
 
-        #return self.model.predict(df)
-        return self.model.predict(X)
+        return self.model.predict(df)
 
