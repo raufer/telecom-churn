@@ -36,6 +36,9 @@ def main(args):
     test_X = test[cols]
     test_Y = test[target_col]
 
+    print("COLUMNS TRAIN PREPROCESSED: ", train_X.columns)
+    print("COLUMNS TEST PREPROCESSED: ", test_X.columns)
+
     model = XGBClassifier(
         base_score=0.5,
         booster='gbtree',
