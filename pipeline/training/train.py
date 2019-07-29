@@ -11,8 +11,6 @@ from sklearn.metrics import confusion_matrix,accuracy_score,classification_repor
 from sklearn.metrics import roc_auc_score,roc_curve,scorer
 from sklearn.metrics import f1_score
 from sklearn.metrics import precision_score,recall_score
-from sklearn.linear_model import LogisticRegression
-from sklearn.neighbors import KNeighborsClassifier
 
 
 
@@ -38,33 +36,29 @@ def main(args):
     test_X = test[cols]
     test_Y = test[target_col]
 
-    # model = XGBClassifier(
-    #     base_score=0.5,
-    #     booster='gbtree',
-    #     colsample_bylevel=1,
-    #     colsample_bytree=1,
-    #     gamma=0,
-    #     learning_rate=0.9,
-    #     max_delta_step=0,
-    #     max_depth=7,
-    #     min_child_weight=1,
-    #     missing=None,
-    #     n_estimators=100,
-    #     n_jobs=1,
-    #     nthread=None,
-    #     objective='binary:logistic',
-    #     random_state=0,
-    #     reg_alpha=0,
-    #     reg_lambda=1,
-    #     scale_pos_weight=1,
-    #     seed=None,
-    #     silent=True,
-    #     subsample=1
-    # )
-
-    model = KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
-           metric_params=None, n_jobs=1, n_neighbors=5, p=2,
-           weights='uniform')
+    model = XGBClassifier(
+        base_score=0.5,
+        booster='gbtree',
+        colsample_bylevel=1,
+        colsample_bytree=1,
+        gamma=0,
+        learning_rate=0.9,
+        max_delta_step=0,
+        max_depth=7,
+        min_child_weight=1,
+        missing=None,
+        n_estimators=100,
+        n_jobs=1,
+        nthread=None,
+        objective='binary:logistic',
+        random_state=0,
+        reg_alpha=0,
+        reg_lambda=1,
+        scale_pos_weight=1,
+        seed=None,
+        silent=True,
+        subsample=1
+    )
 
     model.fit(train_X, train_Y)
 
