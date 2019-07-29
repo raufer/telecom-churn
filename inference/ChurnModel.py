@@ -13,6 +13,6 @@ class ChurnModel(object):
         self.model = pickle.load(open("model/model", "rb"))
 
     def predict(self, X, features_names):
-        print(X)
+        raise ValueError([X, type(X)])
         return self.model.predict(X)
 
