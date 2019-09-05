@@ -1,0 +1,131 @@
+
+Showing logs for build [32mmeta-raufer-telecom-churn-maste-1[0m stage [32mmeta-pipeline[0m and container [32mstep-credential-initializer-5pdl7[0m
+{"level":"warn","ts":1567703688.46646,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1567703688.4667735,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mmeta-raufer-telecom-churn-maste-1[0m stage [32mmeta-pipeline[0m and container [32mstep-working-dir-initializer-8dq2s[0m
+{"level":"warn","ts":1567703689.4336464,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1567703689.4355695,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mmeta-raufer-telecom-churn-maste-1[0m stage [32mmeta-pipeline[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mmeta-raufer-telecom-churn-maste-1[0m stage [32mmeta-pipeline[0m and container [32mstep-git-source-meta-raufer-telecom-churn-maste-pn4n5[0m
+{"level":"warn","ts":1567703695.4910822,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1567703695.774355,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/******/telecom-churn.git @ f36708e2968f896ac1825f3960581af6b3c19fa8 in path /workspace/source"}
+
+Showing logs for build [32mmeta-raufer-telecom-churn-maste-1[0m stage [32mmeta-pipeline[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:f36708e2968f896ac1825f3960581af6b3c19fa8
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mmeta-raufer-telecom-churn-maste-1[0m stage [32mmeta-pipeline[0m and container [32mstep-merge-pull-refs[0m
+SKIP merge-pull-refs: Nothing to merge
+
+Showing logs for build [32mmeta-raufer-telecom-churn-maste-1[0m stage [32mmeta-pipeline[0m and container [32mstep-create-effective-pipeline[0m
+Deleting and cloning the Jenkins X versions repo
+Cloning the Jenkins X versions repo https://github.com/jenkins-x/jenkins-x-versions.git with ref refs/heads/master to /builder/home/.**/jenkins-x-versions
+performing pack detection in folder /workspace/source
+--> Draft detected Python (57.520234%)
+selected pack: /builder/home/.**/draft/packs/github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/packs/python
+Effective pipeline written to jenkins-x-effective.yml
+
+Showing logs for build [32mmeta-raufer-telecom-churn-maste-1[0m stage [32mmeta-pipeline[0m and container [32mstep-create-tekton-crds[0m
+running command: echo \$(**-release-version) > VERSION
+
+running command: ** step tag --version \$(cat VERSION)
+Updating chart version in charts/telecom-churn/Chart.yaml to 0.0.38
+Tag v0.0.38 created and pushed to remote origin
+
+WARNING: failed to find secret kaniko-secret in namespace **: secrets "kaniko-secret" not found
+PipelineActivity for ******-telecom-churn-master-1
+Applying changes 
+upserted PipelineResource ******-telecom-churn-master for the git repository https://github.com/******/telecom-churn.git
+upserted Task ******-telecom-churn-master-from-build-pack-1
+upserted Pipeline ******-telecom-churn-master-1
+created PipelineRun ******-telecom-churn-master-1
+created PipelineStructure ******-telecom-churn-master-1
+
+waiting for stage [32mfrom-build-pack[0m : container [32mstep-credential-initializer-9scc5[0m to start...
+
+
+Showing logs for build [32mmeta-raufer-telecom-churn-maste-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-9scc5[0m
+{"level":"warn","ts":1567703705.1295938,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1567703705.1298993,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+waiting for stage [32mfrom-build-pack[0m : container [32mstep-working-dir-initializer-s2jqm[0m to start...
+
+
+Showing logs for build [32mmeta-raufer-telecom-churn-maste-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-s2jqm[0m
+{"level":"warn","ts":1567703706.2370496,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1567703706.2377396,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source /workspace/source/charts/telecom-churn\""}
+
+waiting for stage [32mfrom-build-pack[0m : container [32mstep-place-tools[0m to start...
+
+
+Showing logs for build [32mmeta-raufer-telecom-churn-maste-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+waiting for stage [32mfrom-build-pack[0m : container [32mstep-git-source-raufer-telecom-churn-master-g548l[0m to start...
+
+
+Showing logs for build [32mmeta-raufer-telecom-churn-maste-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-raufer-telecom-churn-master-g548l[0m
+{"level":"warn","ts":1567703716.3196871,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1567703716.6566076,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/******/telecom-churn.git @ v0.0.38 in path /workspace/source"}
+
+waiting for stage [32mfrom-build-pack[0m : container [32mstep-git-merge[0m to start...
+
+
+Showing logs for build [32mmeta-raufer-telecom-churn-maste-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:f36708e2968f896ac1825f3960581af6b3c19fa8
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+waiting for stage [32mfrom-build-pack[0m : container [32mstep-setup-jx-git-credentials[0m to start...
+
+
+Showing logs for build [32mmeta-raufer-telecom-churn-maste-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+waiting for stage [32mfrom-build-pack[0m : container [32mstep-build-python-unittest[0m to start...
+
+
+Showing logs for build [32mmeta-raufer-telecom-churn-maste-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-python-unittest[0m
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+
+waiting for stage [32mfrom-build-pack[0m : container [32mstep-build-container-build[0m to start...
+
+
+Showing logs for build [32mmeta-raufer-telecom-churn-maste-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+Error: error resolving dockerfile path: please provide a valid path to a Dockerfile within the build context with --dockerfile
+Usage:
+  executor [flags]
+
+Flags:
+      --build-arg multi-arg type                  This flag allows you to pass in ARG values at build time. Set it repeatedly for multiple values.
+      --cache                                     Use cache when building image
+      --cache-dir string                          Specify a local directory to use as a cache. (default "/cache")
+      --cache-repo string                         Specify a repository to use as a cache, otherwise one will be inferred from the destination provided
+      --cache-ttl duration                        Cache timeout in hours. Defaults to two weeks. (default 336h0m0s)
+      --cleanup                                   Clean the filesystem at the end
+  -c, --context string                            Path to the dockerfile build context. (default "/workspace/")
+  -d, --destination multi-arg type                Registry the final image should be pushed to. Set it repeatedly for multiple destinations. (default )
+  -f, --dockerfile string                         Path to the dockerfile to be built. (default "Dockerfile")
+      --force                                     Force building outside of a container
+  -h, --help                                      help for executor
+      --insecure                                  Push to insecure registry using plain HTTP
+      --insecure-pull                             Pull from insecure registry using plain HTTP
+      --insecure-registry multi-arg type          Insecure registry using plain HTTP to push and pull. Set it repeatedly for multiple registries.
+      --no-push                                   Do not push the image to the registry
+      --reproducible                              Strip timestamps out of the image to make it reproducible
+      --single-snapshot                           Take a single snapshot at the end of the build.
+      --skip-tls-verify                           Push to insecure registry ignoring TLS verify
+      --skip-tls-verify-pull                      Pull from insecure registry ignoring TLS verify
+      --skip-tls-verify-registry multi-arg type   Insecure registry ignoring TLS verify to push and pull. Set it repeatedly for multiple registries. (default )
+      --snapshotMode string                       Change the file attributes inspected during snapshotting (default "full")
+      --tarPath string                            Path to save the image in as a tarball instead of pushing
+      --target string                             Set the target build stage to build
+  -v, --verbosity string                          Log level (debug, info, warn, error, fatal, panic (default "info")
+
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-container-build'. The execution of the pipeline has stopped.[0m
