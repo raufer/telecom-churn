@@ -47,37 +47,37 @@ pipeline {
           sh "echo \$(jx-release-version) > VERSION"
           sh "jx step tag --version \$(cat VERSION)"
 
-	      sh '''
-	      export VERSION=`(cat VERSION)`
-	      for file in pipeline/*/ ; do
-	        if [[ -d "$file" && ! -L "$file" ]]; then
-	          echo "Building $file";
-	          cd $file;
-	          STEP=$(basename $file)
-	          IMAGE=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG/$STEP:$VERSION
-	          echo $IMAGkE
-	          docker build --network=host -t $IMAGE . ;
-	          docker push $IMAGE;
-	          cd ../..;
-	        fi;
-	      done
-	      '''
+	  sh '''
+	  export VERSION=`(cat VERSION)`
+	  for file in pipeline/*/ ; do
+	    if [[ -d "$file" && ! -L "$file" ]]; then
+	      echo "Building $file";
+	      cd $file;
+	      STEP=$(basename $file)
+	      IMAGE=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG/$STEP:$VERSION
+	      echo $IMAGkE
+	      docker build --network=host -t $IMAGE . ;
+	      docker push $IMAGE;
+	      cd ../..;
+	    fi;
+	  done
+	  '''
 
-	      sh '''
-	      export VERSION=`(cat VERSION)` && \
-	      export IMAGE=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG/inference:$VERSION && \
-	      cd inference && \
-	      docker build --network=host -t $IMAGE . && \
-	      docker push $IMAGE && \
-	      cd ../
-	      '''
+	  sh '''
+	  export VERSION=`(cat VERSION)` && \
+	  export IMAGE=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG/inference:$VERSION && \
+	  cd inference && \
+	  docker build --network=host -t $IMAGE . && \
+	  docker push $IMAGE && \
+	  cd ../
+	  '''
 
-	      //sh "jx step post build --image $DOCKER_REGISTRY/$ORG/$APP_NAME:\$(cat VERSION)"
+	  //sh "jx step post build --image $DOCKER_REGISTRY/$ORG/$APP_NAME:\$(cat VERSION)"
 
- 	      // Compile Kubeflow Pipeline
-	      sh "curl https://bootstrap.pypa.io/get-pip.py | python3"
-          sh "pip3 install -r pipeline/requirements.txt"
-	      sh "export VERSION=`(cat VERSION)` && python3 pipeline/pipeline.py"
+ 	  // Compile Kubeflow Pipeline
+	  sh "curl https://bootstrap.pypa.io/get-pip.py | python3"
+      sh "pip3 install -r pipeline/requirements.txt"
+	  sh "export VERSION=`(cat VERSION)` && python3 pipeline/pipeline.py"
         }
       }
     }
