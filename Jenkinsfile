@@ -70,7 +70,7 @@ pipeline {
 
  	  // Compile Kubeflow Pipeline
 	  sh "curl https://bootstrap.pypa.io/get-pip.py | python3"
-      sh "pip3 install -r pipeline/requirements.txt"
+	  sh "pip3 install -r pipeline/requirements.txt"
 	  sh "export VERSION=`(cat VERSION)` && python3 pipeline/pipeline.py"
         }
       }
