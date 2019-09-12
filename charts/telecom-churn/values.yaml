@@ -1,8 +1,8 @@
-name: telecom-churn
+name: product-recommendation
 namespace: seldon
 model:
   image:
-    name: 788644545849.dkr.ecr.us-east-2.amazonaws.com/telecom-churn/inference:0.3
+    name: 788644545849.dkr.ecr.us-east-2.amazonaws.com/telecom-churn/inference:0.0.44
     pullPolicy: IfNotPresent
   name: classifier
   resources:

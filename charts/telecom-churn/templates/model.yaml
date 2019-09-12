@@ -55,7 +55,7 @@ spec:
             {{- end}}
           {{ else }} []
           {{- end }}
-      name: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+      name: {{ .Chart.Name }}
       replicas: {{ .Values.replicas }}
       labels:
       {{- toYaml .Values.predictorLabels | nindent 8}}
