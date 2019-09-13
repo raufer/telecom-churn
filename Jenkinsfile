@@ -108,7 +108,7 @@ pipeline {
       }
       steps {
         container('python') {
-          dir('./charts/telecom-churn') {
+          dir('./charts/product-recommendation') {
             sh "jx step changelog --version v\$(cat ../../VERSION)"
 
             // Add the correct IMAGE:VERSION value in values.yaml
