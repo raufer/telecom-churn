@@ -63,7 +63,7 @@ if project_pipeline_id:
 
 body = {
     'name': "{}-v{}".format(project, version),
-    'description': 'Manticore Experiment'
+    'description': 'Product Recommendation Experiment'
 }
 response = client.experiments.create_experiment(body)
 experiment_id = response.id
