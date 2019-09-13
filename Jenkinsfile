@@ -4,8 +4,8 @@ pipeline {
   }
   environment {
     ORG = 'raufer'
-    APP_NAME = 'telecom-churn'
-    DOCKER_REGISTRY_ORG = 'telecom-churn'
+    APP_NAME = 'product-recommendation'
+    DOCKER_REGISTRY_ORG = 'product-recommendation'
     CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
     //AWS_ACCESS_KEY_ID     = credentials('jenkins-aws-secret-key-id')
     //AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
