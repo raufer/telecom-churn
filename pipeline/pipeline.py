@@ -39,6 +39,18 @@ def data_versioning_op(prepared_data_location, data_repository):
     )
 
 
+def upload_model_op(model_repository):
+    return dsl.ContainerOp(
+        name='upload-model-to-repository',
+        image=image('upload-model'),
+        command=['python'],
+        arguments=[
+            '/app/upload_model.py',
+            '--model-repository', model_repository
+        ]
+    )
+
+
 def analysis_op(prepared_data_location):
     return dsl.ContainerOp(
         name='analysis',
@@ -85,7 +97,8 @@ def pipeline(
         raw_data_location="s3://manticore-data/churn/raw",
         prepared_data_location="s3://manticore-data/churn/prepared",
         model_repo_location="s3://manticore-model-repository/churn",
-        data_repository='product-recommendation'
+        data_repository='product-recommendation',
+        model_repository='product-recommendation'
 ):
     steps = {}
 
@@ -97,6 +110,10 @@ def pipeline(
     steps['data-versioning'] = data_versioning_op(
         prepared_data_location=prepared_data_location,
         data_repository=data_repository
+    )
+
+    steps['upload-model'] = upload_model_op(
+        model_repository=model_repository
     )
 
     steps['analysis'] = analysis_op(
@@ -117,6 +134,7 @@ def pipeline(
     steps['train'].after(steps['preprocess'])
     steps['analysis'].after(steps['preprocess'])
     steps['evaluate'].after(steps['train'])
+    steps['upload-model'].after(steps['evaluate'])
 
 
 if __name__ == '__main__':

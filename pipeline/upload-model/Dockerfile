@@ -11,4 +11,4 @@ RUN pip install pandas==0.25.0 && \
 
 COPY . /app
 
-ENTRYPOINT [ "python", "/app/data_versioning.py" ]
+ENTRYPOINT [ "python", "/app/upload_model.py" ]
