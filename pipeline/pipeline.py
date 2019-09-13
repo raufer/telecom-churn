@@ -41,7 +41,7 @@ def data_versioning_op(prepared_data_location, data_repository):
 
 def upload_model_op(model_repository):
     return dsl.ContainerOp(
-        name='upload-model-to-repository',
+        name='upload-model',
         image=image('upload-model'),
         command=['python'],
         arguments=[
