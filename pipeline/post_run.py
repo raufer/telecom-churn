@@ -1,7 +1,8 @@
 import os
 import kfp
 
-project = os.environ['ORG'] + '-' + os.environ['APP_NAME']
+# project = os.environ['ORG'] + '-' + os.environ['APP_NAME']
+project = 'product-recommendation'
 version = os.environ['VERSION']
 
 client = kfp.Client(host='127.0.0.1:8080/pipeline')
