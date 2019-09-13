@@ -28,7 +28,7 @@ def preprocess_op(raw_data_location, prepared_data_location):
 
 def data_versioning_op(prepared_data_location, data_repository):
     return dsl.ContainerOp(
-        name='preprocess',
+        name='data-versioning',
         image=image('data-versioning'),
         command=['python'],
         arguments=[
