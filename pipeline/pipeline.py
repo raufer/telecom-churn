@@ -15,7 +15,7 @@ def image(step_name):
 
 def preprocess_op(raw_data_location, prepared_data_location):
     return dsl.ContainerOp(
-        name='preprocess',
+        name='data-transformations',
         image=image('preprocess'),
         command=['python'],
         arguments=[
