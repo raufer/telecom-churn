@@ -40,6 +40,6 @@ predictorLabels:
 
 autoscaling:
   minReplicas: 1
-  maxReplicas: 10
+  maxReplicas: 20
   targetAverageUtilization:
-    cpu: 80
+    cpu: 90
